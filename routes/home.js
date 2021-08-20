@@ -11,9 +11,27 @@ const fs = require('fs');
     });
 /* GET home page. */
 router.get('/', function(req, res, next) {
-			res.render('home', {items: Object.values(JSON.parse(JSON.stringify(items)))});
+
+	console.log("GETting home.ejs");
+
+	let data = fs.readFileSync('ITEMS.json');
+	items = JSON.parse(data);
+		
+	let avaibleItems = []
+
+    for (let i = 0; i < items.length; i++)  { 
+   
+    if (items[i].stato == 'Disponibile')
+    {
+      avaibleItems.push(items[i]);
+    }
+}
+
+    
+      res.render('home', {items: avaibleItems});
 			
 });
+
 
 
 module.exports = router;
