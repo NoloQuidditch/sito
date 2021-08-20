@@ -31,7 +31,7 @@ router.post('/', function(req, res, next) {
         }
         else{
          // 	res.render('', {nome:"francesco2", citta: "bologna2"});
-        res.render('home');
+        res.redirect('home');
         }
       
     }
