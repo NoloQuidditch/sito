@@ -12,8 +12,54 @@
 
 </head>
 <body>
-<%=items.items[0]%>
- 
+	<form action="/home" method="post">
+<table>
+ 	<caption>
+ 		<p>I nostri prodotti</p>
+ 	</caption>
+ 	<thead>
+ 	<tr>
+ 		<td><b>Nome</b></td>
+ 		<!-- <td><b>Immagine</b></td> -->
+ 		<td><b>Descrizione</b></td>
+ 		<td><b>Prezzo per giornata</b></td>
+ 		<td><b>Seleziona</b></td>
+ 		<!-- <td><b>Modello</b></td> -->
+ 	</tr>
+	</thead>
+
+<tbody>
+	
+	<% items.forEach(function(item){ %> 
+	<tr>
+		<td><%=item.nome%></td>
+		<td><%=item.descrizione%></td>
+		<td><%=item.prezzo%></td>
+		<td><select name="quantity" id="frecciaargento">
+ 			<option value="0">-</option>
+		    <option value="1">1</option>
+		    <option value="2">2</option>
+		    <option value="3">3</option>
+		    <option value="4">4</option>
+		    <option value="5">5</option>
+		    <option value="6">6</option>
+		    <option value="7">7</option>
+		    <option value="8">8</option>
+		    <option value="9">9</option>
+		    <option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option></td>
+	</tr>
+	<% }); %>
+	
+
+</tbody>
+
+</table>
+		 <input type="submit" name="submit">
+ </form>
 </body>
 
 </html>
