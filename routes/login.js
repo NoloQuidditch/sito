@@ -1,19 +1,22 @@
 var express = require('express');
 var router = express.Router();
+var session = require('express-session');
 var moment = require('moment');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-			res.render('login', {nome:"francesco2", citta: "bologna2"});
+			res.render('login');
 			
 });
 
 router.post('/', function(req, res, next) {
+
+
+
 	let consentito = false
 
-    for (let i = 0; i < users.length; i++) 
-
+    for (let i = 0; i < users.length; i++)
 
   { 
    
@@ -27,11 +30,13 @@ router.post('/', function(req, res, next) {
 
     if (consentito){
         if (ruolo == "amministatore"){
-           	res.render('', {nome:"francesco", citta: "bologna"});
+          req.session.username = req.body.username
+          res.render('', {nome:"francesco", citta: "bologna"});
         }
         else{
          // 	res.render('', {nome:"francesco2", citta: "bologna2"});
-        res.redirect('home');
+          req.session.username = req.body.username
+          res.redirect('home');
         }
       
     }
