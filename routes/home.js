@@ -77,7 +77,7 @@ router.get('/', function(req, res, next) {
                 let found = prodotti.find(element => element.ID == req.body.id[i]);
                 found.numero = found.numero - quantity[i];
 
-                let oggetto = [req.body.id[i], quantity[i]];
+                let oggetto = { id: req.body.id[i], quantita: quantity[i]};
                 ordineProdotti.push(oggetto);
             }
                 }
