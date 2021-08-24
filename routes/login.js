@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 }
 
     if (consentito){
-        if (ruolo == "amministatore"){
+        if (ruolo == "amministratore"){
           req.session.username = req.body.username
           res.render('', {nome:"francesco", citta: "bologna"});
         }
