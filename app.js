@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
 var flash = require('express-flash');
 var session = require('express-session');
@@ -12,6 +13,8 @@ var mysql = require('mysql');
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var homeRouter = require('./routes/home');
+var storicoRouter = require('./routes/storico');
+var adminRouter = require('./routes/admin');
 
 var bodyParser = require('body-parser');
 var multer = require('multer');
@@ -42,10 +45,15 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/home', homeRouter);
+app.use('/storico', storicoRouter);
+app.use('/admin', adminRouter);
 
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.log(err);
+  console.log(err.message);
+  console.log(err.status);
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
