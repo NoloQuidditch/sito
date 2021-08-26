@@ -3,16 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 	<link rel="stylesheet" type="text/css" href="style.css"> -->
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Nolo Quidditch</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="containder-fluid">
+	<h1><a href="#"><img src="img/Logo.jpg">Nolo Quidditch</a></h1>
+
+
+<a href="storico"><button>storico</button></a>
+
 	<form action="/home" method="post">
-<table>
+<table class="table">
  	<caption>
  		<p>I nostri prodotti</p>
  	</caption>
@@ -22,9 +27,7 @@
  		<!-- <td><b>Immagine</b></td> -->
  		<td><b>Descrizione</b></td>
  		<td><b>Prezzo per giornata</b></td>
- 		<td><b>Oggetti disponibili</b></td>
  		<td><b>Seleziona</b></td>
- 		<!-- <td><b>Modello</b></td> -->
  	</tr>
 	</thead>
 
@@ -32,20 +35,24 @@
 	
 	<% items.forEach(function(item){ %> 
 	<tr>
+		<%	if (item.stato != "non disponibile"){ %>
 		<input type="hidden" value="<%= item.ID%>" name="id"/>
 		<td><%=item.nome%></td>
-		<td><%=item.descrizione%></td>
+		<td id="descrizione"><%=item.descrizione%></td>
 		<td><input type="hidden" value="<%= item.prezzo%>" name="prezzo"/><%=item.prezzo%></td>
-		<td><%=item.numero%></td>
-<!-- trovare una soluzione per mostrare nel menù a tendina già solo il numero di oggetti disponibili -->
 		<td>
-			<select name="quantity" id="quantita">
+		<%	if (item.stato == "disponibile"){ %>
+ 			<select name="quantity" id="quantita">
 			<% for(let i=0; i <= item.numero; i ++){ %>
 				<option value="<%= i %>"><%= (i==0?"-": i) %></option>
 			<% }%>
  			</select>
-		    
+			<%	} else if (item.stato == "temporaneamente non disponibile"){ %>
+					<input type="hidden" value="0" name="quantity" />
+					Prodotto temporaneamente non disponibile al noleggio  			
+			<%	}	%>
 		</td>
+		<%	}	%>
 	</tr>
 	<% }); %>
 	
@@ -53,7 +60,7 @@
 </tbody>
 
 </table>
-		 <input type="submit" name="submit">
+		 <input type="submit" name="submit" value="procedi al pagamento">
  </form>
 </body>
 
