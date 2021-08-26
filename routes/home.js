@@ -29,12 +29,8 @@ router.get('/', function(req, res, next) {
     }
 }
 
-    
       res.render('home', {items: avaibleItems});
-    			
-
      
-         
 });
 
  router.post('/',function(req, res, next){
@@ -84,7 +80,8 @@ router.get('/', function(req, res, next) {
             let ordine = {
                 utente: req.session.username,
                 dataeora: new Date().toISOString(),
-                prodotti: ordineProdotti
+                prodotti: ordineProdotti,
+                stato: "noleggio in corso"
          }
         console.log(prodotti);
         fs.writeFileSync("ITEMS.json", JSON.stringify(prodotti, undefined, 1));
