@@ -6,7 +6,7 @@ var session = require('express-session');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-			res.render('', {nome:"francesco", citta: "bologna"});
+			res.render('', {nome:"NOLO QUIDDITCH"});
 			
 });
 
