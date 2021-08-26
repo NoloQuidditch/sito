@@ -55,7 +55,23 @@ router.get('/',function(req, res, next){
        			 }
     		};	
 	 	}
-    res.render('storico', {orders: ordiniUtente});
+    res.render('storico', {orders: ordiniUtente, ruolo: ruolo});
 });
 
+router.post('/',function(req, res, next){
+
+	let data = fs.readFileSync(req.body.utente + '.json');
+    let ordini = JSON.parse(data);
+	let dati = fs.readFileSync("ITEMS.json");
+    let prodotti = JSON.parse(data);
+    let found = ordini.find(ordine => ordine.dataeora == req.body.dataeora);
+    found.stato = req.body.stato;
+	for (let i = 0; i < found.prodotti.length; i++){
+    	let trovato = found.prodotti.find( p=> p.ID == found.prodotti[i].id);
+    	trovato.numero = trovato.numero + found.prodotti[i].quantita;
+    }
+    fs.writeFileSync(req.body.utente + '.json', JSON.stringify(ordini, undefined, 1));
+   fs.writeFileSync("ITEMS.json", JSON.stringify(prodotti, undefined, 1));
+	res.redirect('storico');
+});
 module.exports = router;
