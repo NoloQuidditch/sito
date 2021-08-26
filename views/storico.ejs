@@ -12,20 +12,37 @@
 <body>
 <div>
 	<table>
-		<tr>
- 		<td><b>utente</b></td>
- 		<td><b>data e ora</b></td>
- 		<td><b>prodotto</b></td>
- 		<td><b>numero</b></td>
+		<% orders.forEach(function(order){ %>
+	<tr>
+		<td><b>utente: </b><%=order.utente%></td>
  	</tr>
- 	<% orders.forEach(function(order){ %>
  	<tr>
- 		<td><%=order.utente%></td>
-		<td><%=new Date(order.dataeora).toString()%></td>
+		<td><b>data e ora: </b><%=new Date(order.dataeora).toString()%></td>
+	<%	if (ruolo == "amministratore"){ %>
+		<form action="/storico" method="post">
+			<input type="hidden" value="<%= order.utente%>" name="utente"/>
+			<input type="hidden" value="<%= order.dataeora%>" name="dataeora"/>
+ 		<td><select name="stato" value="<%= order.stato%>" id="stato">
+				<option value="noleggio in corso">Noleggio in corso</option>
+				<option value="nolegio concluso">Noleggio concluso</option>
+			</select>
+			<input type="submit" value="salva"/>
+		</form>
+	<%	} else { %>
+		<td><b>stato: </b><%=order.stato%></td>
+	<%	} %>
+  		
+	</tr> 	
+
+	<tr>
 		<% order.prodotti.forEach(function(product){ %>
-		<td><%=product.id%></td>
-		<td><%=product.quantita%></td>
-			<% });%></tr>
+		<tr>
+			<td><b>prodotto: </b><%=product.id%></td>
+			<td><b>numero: </b><%=product.quantita%></td>
+			
+		</tr>
+		<% });%>
+	</tr>
 			<% });%>
 	</table>
 	
