@@ -51,43 +51,5 @@ const fs = require('fs');
     if (err) throw err; 
     console.log(users);
     });
- /*   
-app.post("/", function(req, res){ 
-    console.log("Ricevuto una richiesta POST");
-    // contenuto della richiesta
-    console.log(req.body);
-    // username
-    console.log(req.body.username);
-    // password
-    console.log(req.body.pass);
-    //aprire json e confrontarlo
 
-   let consentito = false
-
-    for (let i = 0; i < users.length; i++) 
-
-
-  { 
-   
-    if (req.body.username == users[i].utente && 
-        req.body.pass == users[i].password)
-    {
-       consentito = true;
-       ruolo = users[i].ruolo;
-    }
-}
-
-    if (consentito){
-        if (ruolo == "amministatore"){
-             res.sendFile(path.join(__dirname + '/public/new.html'));
-        }
-        else{
-           res.sendFile(path.join(__dirname + '/public/item.html'  ));
-         //res.render("item.html");
-        }
-      
-    }
-    else {res.send('<h1> accesso negato </h1>');};
-   })
-*/
 module.exports = router;
