@@ -3,14 +3,29 @@
 	background-color: #483D8B;
 } 
 
+@media screen and (min-width: 480px) {
 #login{
-  margin: 40%;
+  margin-right: 50%;
+  margin-left: 35%;
+  margin-top: 20%;
   padding: 5%;
-  height: 50%;
+  height: 40%;
   border:  solid;
   border-color: gold;
   width: 20%;
-}
+}}
+
+@media screen and (max-width: 375px) {
+#login{
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 70%;
+  padding: 5%;
+  height: 40%;
+  border:  solid;
+  border-color: gold;
+  width: 40%;
+}}
 
 form input[type=text]{
 
@@ -49,30 +64,81 @@ label {
 
 #Nolo {
   color: gold;
-  font-family: "Verdana", sans-serif;
+  font-family: "Luminari", fantasy;
+  font-size: 150%;
 }
 
 h1{
 text-align: center;
 }
 
+#storico{
+  background-color: gold;
+  padding: 1%;
+ font-family: "Luminari", fantasy;
+ color: #191970;
+}
 
-@media screen and (min-width: 480px) {
-thead {
-  background-color: darkorange;
+#ourprod{
+ font-family: "Luminari", fantasy;
+  font-weight: bolder;
+  font-size: 150%;
+   color:  #DAA520;
 }
+
+.intestazione{
+  background-color: #191970;
+  padding: 20%;
+  border:  solid;
+  border-width: thick;
 }
-@media screen and (max-width: 375px) {
-thead {
-  background-color: hotpink;
+
+
+#toptab{
+  color:  white;
+  font-family: "Luminari", fantasy;
+  text-align: center;
 }
+
+#dayprice{
+  font-size: 90%;
+}
+
+#nome{
+  color: gold;
+  font-weight: bolder;
+}
+
+.price{
+  text-align: center;
+  color: white;
+}
+
+#descrizione{
+  color: white;
+}
+
+#pay{
+  background-color: gold;
+  padding: 1%;
+ font-family: "Luminari", fantasy;
+ color: #191970;
+ text-align: center;
+ margin-left: 35%;
+ margin-right: 55%;
 }
 /*tr {
   border-width: 5px;
   border-color: #00008B;
 }*/
+
 @media screen and (min-width: 480px) {
 
+@media screen and (max-width: 375px) {
+thead {
+  background-color: hotpink;
+}
+}
 /* EM e VH*/
 
 /*floting*/
