@@ -11,6 +11,11 @@
  -->
 </head>
 <body>
+	<%	if (ruolo == "amministratore"){ %>
+		<a href="admin"><button>Pagina amministratore</button></a>
+	<%	} else { %>
+		<a href="home"><button>home</button></a>
+	<%	} %>
 <div>
 	<table>
 		<% orders.forEach(function(order){ %>
