@@ -1,0 +1,86 @@
+
+ body{
+	background-color: #483D8B;
+} 
+
+#login{
+  margin: 40%;
+  padding: 5%;
+  height: 50%;
+  border:  solid;
+  border-color: gold;
+  width: 20%;
+}
+
+form input[type=text]{
+
+  width: 100px;
+  height: 65%;
+  margin: 10px 10px;
+  box-sizing: 3px 12px;
+  border: none;
+  background-color: #191970;
+  color: white;
+
+}
+
+.UsPw{
+text-align: center;
+}
+
+#password{
+width: 100px;
+  height: 65%;
+  margin: 10px 10px;
+  box-sizing: 3px 12px;
+  border: none;
+  background-color: #191970;
+  padding: none;
+  color:  white;
+}
+
+#button {
+  background-color: gold;
+}
+
+label {
+	color: gold;
+}
+
+#Nolo {
+  color: gold;
+  font-family: "Verdana", sans-serif;
+}
+
+h1{
+text-align: center;
+}
+
+
+@media screen and (min-width: 480px) {
+thead {
+  background-color: darkorange;
+}
+}
+@media screen and (max-width: 375px) {
+thead {
+  background-color: hotpink;
+}
+}
+/*tr {
+  border-width: 5px;
+  border-color: #00008B;
+}*/
+@media screen and (min-width: 480px) {
+
+/* EM e VH*/
+
+/*floting*/
+/*@media (max-width: 575px){
+	#descrizione{
+
+	}
+}
+
+id e classi
+container e fai classe container */
