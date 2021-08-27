@@ -7,28 +7,27 @@
 	<title>Nolo Quidditch</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 
 </head>
 <body class="containder-fluid">
-	<h1><a href="#"><img src="img/Logo.jpg">Nolo Quidditch</a></h1>
+	<h1><a href="#" id="Nolo"><img src="img/Logo.jpg">Nolo Quidditch</a></h1>
 
 
-<a href="storico"><button>storico</button></a>
+<a href="storico"><button id="storico">storico</button></a>
 
 	<form action="/home" method="post">
 <table class="table">
  	<caption>
- 		<p>I nostri prodotti</p>
+ 		<p id="ourprod">I nostri prodotti</p>
  	</caption>
  	<thead>
- 	<tr>
- 		<td><b>Nome</b></td>
+ 	<tr class="intestazione">
+ 		<td id="toptab"><b>Nome</b></td>
  		<!-- <td><b>Immagine</b></td> -->
- 		<td><b>Descrizione</b></td>
- 		<td><b>Prezzo per giornata</b></td>
- 		<td><b>Seleziona</b></td>
+ 		<td id="toptab"><b>Descrizione</b></td>
+ 		<td id="toptab"><b id="dayprice">Prezzo per giornata</b></td>
+ 		<td id="toptab"><b>Seleziona</b></td>
  	</tr>
 	</thead>
 
@@ -38,10 +37,10 @@
 	<tr>
 		<%	if (item.stato != "non disponibile"){ %>
 		<input type="hidden" value="<%= item.ID%>" name="id"/>
-		<td><%=item.nome%></td>
-		<td id="descrizione"><%=item.descrizione%></td>
-		<td><input type="hidden" value="<%= item.prezzo%>" name="prezzo"/><%=item.prezzo%></td>
-		<td>
+		<td id="nome"><%=item.nome%></td>
+		<td name="descrizione" id="descrizione"><%=item.descrizione%></td> 
+		<td class="price"><input type="hidden" value="<%= item.prezzo%>" name="prezzo"/><%=item.prezzo%></td>
+		<td class="price">
 		<%	if (item.stato == "disponibile"){ %>
  			<select name="quantity" id="quantita">
 			<% for(let i=0; i <= item.numero; i ++){ %>
@@ -49,7 +48,7 @@
 			<% }%>
  			</select>
 			<%	} else if (item.stato == "temporaneamente non disponibile"){ %>
-					<input type="hidden" value="0" name="quantity" />
+					<input type="hidden" value="0" name="quantity"/>
 					Prodotto temporaneamente non disponibile al noleggio  			
 			<%	}	%>
 		</td>
@@ -61,8 +60,11 @@
 </tbody>
 
 </table>
-		 <input type="submit" name="submit" value="procedi al pagamento">
+		 <input type="submit" name="submit" value="procedi al pagamento" id="pay">
  </form>
 </body>
 
 </html>
+
+<!---<button onclick="riduciFont('myarea')" title="Clicca per ridurre la dimensione del testo">Testo(-)</button>
+<button onclick="aumentaFont('myarea')" title="Clicca per aumentarela dimensione del testo">Testo(+)</button> --->
