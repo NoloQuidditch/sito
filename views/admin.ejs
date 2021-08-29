@@ -32,11 +32,10 @@
 		<tr>
 			<form action="/admin" method="post">
 				<input type="hidden" value="inserimento" name="azione"/>
-				<td><input type="text" value="" name="id" class="aggiungiform"> </td>
 				<td><input type="text" value="" name="nome" class="aggiungiform"></td>
-				<td><input type="text" value="" name="descrizione" class="aggiungiform"></td>
-				<td><input type="text" value="" name="numero" class="aggiungiform"></td>
-				<td><input type="text" value="" name="prezzo" class="aggiungiform"></td>
+				<td><textarea type="text" value="" name="descrizione" class="aggiungiform" cols="45" rows="4"></textarea></td>
+				<td><input type="number" step="1" value="" name="numero" class="aggiungiform"></td>
+				<td><input type="number" step ="0.01" value="" name="prezzo" class="aggiungiform"></td>
 				<td><input type="submit" value="aggiungi" class="aggiungiform"/></td>
 			</form>
 		</tr>
@@ -53,7 +52,6 @@
  	<tr class="price">
  		<td><b>ID</b></td>
  		<td><b>Nome</b></td>
- 		<!-- <td><b>Immagine</b></td> -->
  		<td><b>Descrizione</b></td>
  		<td><b>Numero</b></td>
  		<td><b>Prezzo</b></td>
@@ -72,9 +70,9 @@
 			<input type="hidden" value="<%= item.ID%>" name="id" class="aggiungiform"/>
 			<td id="nomeitem"><%= item.ID%></td>
 			<td><input type="text" value="<%= item.nome%>" name="nome" class="aggiungiform"></td>
-			<td><input type="text" value="<%= item.descrizione%>" name="descrizione" class="aggiungiform"></td>
-			<td><input type="text" value="<%= item.numero%>" name="numero" class="aggiungiform"></td>
-			<td><input type="text" value="<%= item.prezzo%>" name="prezzo" class="aggiungiform"></td>
+			<td><textarea name="descrizione" class="aggiungiform" cols="45" rows="4"><%= item.descrizione%></textarea></td>
+			<td><input type="number" step="1"  value="<%= item.numero%>" name="numero" class="aggiungiform"></td>
+			<td><input type="number" step ="0.01" value="<%= item.prezzo%>" name="prezzo" class="aggiungiform"></td>
 			<td><select name="stato" value="<%= item.stato%>" id="disponibilita" class="aggiungiform">
 				<option value="disponibile" class="aggiungiform">Disponibile</option>
 				<option value="temporaneamente non disponibile" class="aggiungiform">Temporaneamente non disponibile</option>
