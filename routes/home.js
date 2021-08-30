@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var session = require('express-session');
 var moment = require('moment');
+app.use( express.static( "public" ) );
 
 const fs = require('fs');
  fs.readFile('ITEMS.json', (err, data) => {
