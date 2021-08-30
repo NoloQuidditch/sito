@@ -6,8 +6,8 @@
 	<title>Nolo Quidditch</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
 
 </head>
 <body>
@@ -17,26 +17,23 @@
 	 <caption>
  		<p id="newprod">Aggiungi nuovo prodotto</p>
  	</caption>
- 	<thead>
- 	<tr class="price">
- 		<td><b>ID</b></td>
- 		<td><b>Nome</b></td>
- 		<!-- <td><b>Immagine</b></td> -->
- 		<td><b>Descrizione</b></td>
- 		<td><b>Numero</b></td>
- 		<td><b>Prezzo</b></td>
- 	</tr>
-	</thead>
 
 	<tbody>
-		<tr>
+		
+			<tr class="price">
 			<form action="/admin" method="post">
+				<td><b>ID</b></td>
 				<input type="hidden" value="inserimento" name="azione"/>
-				<td><input type="text" value="" name="nome" class="aggiungiform"></td>
-				<td><textarea type="text" value="" name="descrizione" class="aggiungiform" cols="45" rows="4"></textarea></td>
-				<td><input type="number" step="1" value="" name="numero" class="aggiungiform"></td>
-				<td><input type="number" step ="0.01" value="" name="prezzo" class="aggiungiform"></td>
-				<td><input type="submit" value="aggiungi" class="aggiungiform"/></td>
+				<td><input type="text" value="" name="id"> </td>
+				<td><b>Nome</b></td>
+				<td><input type="text" value="" name="nome" id="nomeitem"></td>
+				<td><b>Descrizione</b></td>
+				<td><input type="text" value="" name="descrizione"></td>
+				<td><b>Numero</b></td>
+				<td><input type="text" value="" name="numero"></td>
+				<td><b>Prezzo</b></td>
+				<td><input type="text" value="" name="prezzo"></td>
+				<td><input type="submit" value="aggiungi" id="bottone"/></td>
 			</form>
 		</tr>
 	</tbody>
@@ -67,22 +64,22 @@
 	<% items.forEach(function(item){ %> 
 	<tr>
 		<form action="/admin" method="post">
-			<input type="hidden" value="<%= item.ID%>" name="id" class="aggiungiform"/>
+			<input type="hidden" value="<%= item.ID%>" name="id"/>
 			<td id="nomeitem"><%= item.ID%></td>
-			<td><input type="text" value="<%= item.nome%>" name="nome" class="aggiungiform"></td>
+			<td><input type="text" value="<%= item.nome%>" name="nome"></td>
 			<td><textarea name="descrizione" class="aggiungiform" cols="45" rows="4"><%= item.descrizione%></textarea></td>
-			<td><input type="number" step="1"  value="<%= item.numero%>" name="numero" class="aggiungiform"></td>
-			<td><input type="number" step ="0.01" value="<%= item.prezzo%>" name="prezzo" class="aggiungiform"></td>
-			<td><select name="stato" value="<%= item.stato%>" id="disponibilita" class="aggiungiform">
-				<option value="disponibile" class="aggiungiform">Disponibile</option>
-				<option value="temporaneamente non disponibile" class="aggiungiform">Temporaneamente non disponibile</option>
-				<option value="non disponibile" class="aggiungiform">Non disponibile</option>
+			<td><input type="number" step="1"  value="<%= item.numero%>" name="numero"></td>
+			<td><input type="number" step ="0.01" value="<%= item.prezzo%>" name="prezzo"></td>
+			<td><select name="stato" value="<%= item.stato%>" id="disponibilita">
+				<option value="disponibile">Disponibile</option>
+				<option value="temporaneamente non disponibile">Temporaneamente non disponibile</option>
+				<option value="non disponibile">Non disponibile</option>
  			</select></td>
-			<td><input type="submit" value="modifica" id="storico"/></td>
+			<td><input type="submit" value="modifica" id="bottone"/></td>
 		</form>
 		<form action="/admin/eliminaitem" method="post">
 			<input type="hidden" value="<%= item.ID%>" name="id"/>
-			<td><input type="submit" value="elimina" id="storico"/></td>
+			<td><input type="submit" value="elimina" id="bottone"/></td>
 		</form>
 	</tr>
 	<% }); %>
