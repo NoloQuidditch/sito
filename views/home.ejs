@@ -7,10 +7,11 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/home.css">
 
 </head>
 <body class="containder-fluid">
-	<h1><a href="#" id="Nolo">Nolo Quidditch</a></h1>
+	<h1><a href="#" id="Nolo"><img src="Logo.png" id="logo">Nolo Quidditch</a></h1>
 
 
 <a href="storico"><button id="storico">storico</button></a>
@@ -20,12 +21,12 @@
  	<caption>
  		<p id="ourprod">I nostri prodotti</p>
  	</caption>
- 	<thead id="tablethead">
- 	<tr class="intestazione">
- 		<td id="toptab" class="th"><b>Nome</b></td>
- 		<td id="toptab" class="th"><b>Descrizione</b></td>
- 		<td id="toptab" class="th"><b id="dayprice">Prezzo per giornata</b></td>
- 		<td id="toptab" class="th"><b>Seleziona</b></td>
+ 	<thead >
+ 	<tr>
+ 		<td><b>Nome</b></td>
+ 		<td><b>Descrizione</b></td>
+ 		<td><b id="dayprice">Prezzo per giornata</b></td>
+ 		<td><b>Seleziona</b></td>
  	</tr>
 	</thead>
 
@@ -35,10 +36,10 @@
 	<tr>
 		<%	if (item.stato != "non disponibile"){ %>
 		<input type="hidden" value="<%= item.ID%>" name="id"/>
-		<td id="nome" class="th"><%=item.nome%></td>
-		<td name="descrizione" id="descrizione" class="th"><%=item.descrizione%></td> 
-		<td class="price" class="th"><input type="hidden" value="<%= item.prezzo%>" name="prezzo"/><%=item.prezzo%></td>
-		<td class="price" class="th">
+		<td id="nome"><%=item.nome%></td>
+		<td name="descrizione" id="descrizione"><%=item.descrizione%></td> 
+		<td class="price"><input type="hidden" value="<%= item.prezzo%>" name="prezzo"/><%=item.prezzo%></td>
+		<td class="price">
 		<%	if (item.stato == "disponibile"){ %>
  			<select name="quantity" id="quantita">
 			<% for(let i=0; i <= item.numero; i ++){ %>
