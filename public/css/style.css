@@ -3,29 +3,6 @@
 	background-color: #483D8B;
 } 
 
-@media screen and (min-width: 480px) {
-#login{
-  margin-right: 50%;
-  margin-left: 35%;
-  margin-top: 20%;
-  padding: 5%;
-  height: 40%;
-  border:  solid;
-  border-color: gold;
-  width: 20%;
-}}
-
-@media screen and (max-width: 375px) {
-#login{
-  margin-right: 25%;
-  margin-left: 25%;
-  margin-top: 70%;
-  padding: 5%;
-  height: 40%;
-  border:  solid;
-  border-color: gold;
-  width: 40%;
-}}
 
 form input[type=text]{
 
@@ -39,39 +16,16 @@ form input[type=text]{
 
 }
 
-.UsPw{
-text-align: center;
-}
-
-#password{
-width: 100px;
-  height: 65%;
-  margin: 10px 10px;
-  box-sizing: 3px 12px;
-  border: none;
-  background-color: #191970;
-  padding: none;
-  color:  white;
-}
-
-#button {
-  background-color: gold;
-}
-
 label {
 	color: gold;
 }
 
-#Nolo {
-  color: gold;
-  font-family: "Luminari", fantasy;
-  font-size: 150%;
-}
 
 h1{
 text-align: center;
 }
 
+/*
 #storico{
   background-color: gold;
   padding: 1%;
@@ -84,13 +38,18 @@ text-align: center;
   font-weight: bolder;
   font-size: 150%;
    color:  #DAA520;
+     margin: .5em 0 .75em;
+
 }
 
-.intestazione{
+#int{
   background-color: #191970;
+}
+.intestazione{
   padding: 20%;
   border:  solid;
-  border-width: thick;
+  border-width: medium;
+  color: white;
 }
 
 
@@ -98,6 +57,16 @@ text-align: center;
   color:  white;
   font-family: "Luminari", fantasy;
   text-align: center;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+
+.th{
+  padding: .625em;
+  text-align: left;
+  font-size: 70%;
+  letter-spacing: .1em;
 }
 
 #dayprice{
@@ -127,18 +96,48 @@ text-align: center;
  margin-left: 35%;
  margin-right: 55%;
 }
+
+#newprod{
+  font-family: "Luminari", fantasy;
+ color: gold;
+ text-align: center;
+}
+
+.aggiungiform{
+  border: none;
+  background-color: #191970;
+  padding: none;
+  color:  white;
+}
+
+#modificaprod{
+  font-family: "Luminari", fantasy;
+ color: gold;
+ text-align: left;
+}
+
+#nomeitem{
+  color: gold;
+}
+
+.table{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
 /*tr {
   border-width: 5px;
   border-color: #00008B;
 }*/
 
-/*@media screen and (min-width: 480px) {
+@media screen and (min-width: 480px) {}
 
-@media screen and (max-width: 375px) {
-thead {
-  background-color: hotpink;
-}
-}*/
+@media screen and (max-width: 375px) {}
 /* EM e VH*/
 
 /*floting*/
