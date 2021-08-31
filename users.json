@@ -10,6 +10,11 @@
 "ruolo" : "utente"
 },
 {
+"utente" : "oliverbaston",
+"password" : "5asettimana",
+"ruolo" : "utente"
+},
+{
 "utente" : "angelinajohnson",
 "password" : "stellafreccia",
 "ruolo" : "amministratore"
