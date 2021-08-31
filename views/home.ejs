@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nolo Quidditch</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+</head>
+<body class="containder-fluid">
+	<h1><a href="#" id="Nolo">Nolo Quidditch</a></h1>
+
+
+<a href="storico"><button id="storico">storico</button></a>
+
+	<form action="/home" method="post">
+<table class="table">
+ 	<caption>
+ 		<p id="ourprod">I nostri prodotti</p>
+ 	</caption>
+ 	<thead id="tablethead">
+ 	<tr class="intestazione">
+ 		<td id="toptab" class="th"><b>Nome</b></td>
+ 		<td id="toptab" class="th"><b>Descrizione</b></td>
+ 		<td id="toptab" class="th"><b id="dayprice">Prezzo per giornata</b></td>
+ 		<td id="toptab" class="th"><b>Seleziona</b></td>
+ 	</tr>
+	</thead>
+
+<tbody>
+	
+	<% items.forEach(function(item){ %> 
+	<tr>
+		<%	if (item.stato != "non disponibile"){ %>
+		<input type="hidden" value="<%= item.ID%>" name="id"/>
+		<input type="hidden" value="<%= item.nome%>"name="nome"/>
+		<td id="nome" class="th"><%=item.nome%></td>
+		<td name="descrizione" id="descrizione" class="th"><%=item.descrizione%></td> 
+		<td class="price" class="th"><input type="hidden" value="<%= item.prezzo%>" name="prezzo"/><%=item.prezzo%></td>
+		<td class="price" class="th">
+		<%	if (item.stato == "disponibile"){ %>
+ 			<select name="quantity" id="quantita">
+			<% for(let i=0; i <= item.numero; i ++){ %>
+				<option value="<%= i %>"><%= (i==0?"-": i) %></option>
+			<% }%>
+ 			</select>
+			<%	} else if (item.stato == "temporaneamente non disponibile"){ %>
+					<input type="hidden" value="0" name="quantity"/>
+					Prodotto temporaneamente non disponibile al noleggio  			
+			<%	}	%>
+		</td>
+		<%	}	%>
+	</tr>
+	<% }); %>
+	
+
+</tbody>
+
+</table>
+		 <input type="submit" name="submit" value="procedi al pagamento" id="pay">
+ </form>
+</body>
+
+</html>
