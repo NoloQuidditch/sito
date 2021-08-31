@@ -1,5 +1,4 @@
 
-var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -7,17 +6,15 @@ var logger = require('morgan');
 var session = require('express-session');
 
 var flash = require('express-flash');
-var session = require('express-session');
-var mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var homeRouter = require('./routes/home');
 var storicoRouter = require('./routes/storico');
 var adminRouter = require('./routes/admin');
+var ordineRouter = require('./routes/ordine');
 
 var bodyParser = require('body-parser');
-var multer = require('multer');
 
 var app = express();
 
@@ -30,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use( express.static( "public" ) );
+// app.use( express.static( "public" ) );
 
 app.use(session({
     cookie: { maxAge: 3600000 },
@@ -48,6 +45,7 @@ app.use('/login', loginRouter);
 app.use('/home', homeRouter);
 app.use('/storico', storicoRouter);
 app.use('/admin', adminRouter);
+app.use('/ordine', ordineRouter);
 
 // error handler
 app.use(function(err, req, res, next) {
