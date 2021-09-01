@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="it">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,38 +12,48 @@
 	<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
-<h1>Pagamento Nolo Quidditch</h1>
-	<p class="text"><%= new Date(order.dataeora).toString() %></p>
-	<p class="text"><%= order.utente %></p>
-	
+	<div id="tasto"><a href="home"><button id="bottone">home</button></a></div>
+	<h1>Pagamento Nolo Quidditch</h1>
+	<p class="text">
+		<%= new Date(order.dataeora).toString() %>
+	</p>
+	<p class="text">
+		<%= order.utente %>
+	</p>
+
 	<div>
-		
+
 		<table>
 			<tbody>
-			<% order.prodotti.forEach(function(prodotto){ %>
-				<tr class="text">
-					
-					<td><b>Prodotto: </b><%=prodotto.nome%></td>
-					<td><b>Quantità: </b><%=prodotto.quantita%></td>
-					<td><b>Prezzo: </b><%=prodotto.prezzo%></td>	
-					
-				</tr>
-<%	});	%>	
+				<% order.prodotti.forEach(function(prodotto){ %>
+					<tr class="text">
+
+						<td><b>Prodotto: </b>
+							<%=prodotto.nome%>
+						</td>
+						<td><b>Quantità: </b>
+							<%=prodotto.quantita%>
+						</td>
+						<td><b>Prezzo: </b>
+							<%=prodotto.prezzo%>
+						</td>
+
+					</tr>
+					<% }); %>
 			</tbody>
 			<tfoot>
-				<td class="text"><b>Il costo totale è di: </b><%=order.totale%> Galeoni <b>pagare alla cassa.</b></td>
+				<td class="text"><b>Il costo totale è di: </b>
+					<%=order.totale%> Galeoni <b>pagare alla cassa.</b>
+				</td>
 			</tfoot>
-		</table>	 
-		
+		</table>
+
 	</div>
 	<div id="arrivederci">Grazie per averci scelto! A presto</div>
 
-	<div id="tasto"><a href="home"><button id="bottone">home</button></a></div>
-
-<script >
-location.href='ordine/pdf?utente=<%= order.utente %>&dataeora=<%= order.dataeora %>';
-</script>
+	<a href="ordine/pdf?utente=<%= order.utente %>&dataeora=<%= order.dataeora %>"></a>
 </body>
 
 </html>
