@@ -1,0 +1,16 @@
+[
+ {
+  "utente": "viktorkrum",
+  "dataeora": "2021-09-01T18:30:28.836Z",
+  "prodotti": [
+   {
+    "id": "1",
+    "nome": "Nimbus 2000",
+    "quantita": "6",
+    "prezzo": 120
+   }
+  ],
+  "totale": 120,
+  "stato": "noleggio in corso"
+ }
+]
