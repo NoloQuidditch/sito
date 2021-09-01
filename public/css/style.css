@@ -1,8 +1,14 @@
 
- body{
-	background-color: #483D8B;
+  body{
+  background-color: #483D8B;
 } 
 
+#bottone{
+ background-color: gold;
+  padding: 1%;
+ font-family: "Luminari", fantasy;
+ color: #191970;
+}
 
 form input[type=text]{
 
@@ -17,12 +23,13 @@ form input[type=text]{
 }
 
 label {
-	color: gold;
+  color: gold;
 }
 
 
 h1{
 text-align: center;
+
 }
 
 /*
@@ -134,18 +141,8 @@ text-align: center;
   border-width: 5px;
   border-color: #00008B;
 }*/
-
+/*
 @media screen and (min-width: 480px) {}
 
 @media screen and (max-width: 375px) {}
-/* EM e VH*/
-
-/*floting*/
-/*@media (max-width: 575px){
-	#descrizione{
-
-	}
-}
-
-id e classi
-container e fai classe container */
+*/

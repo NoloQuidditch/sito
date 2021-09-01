@@ -1,21 +1,27 @@
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 600px) {
 #login{
   margin-right: 50%;
   margin-left: 35%;
-  margin-top: 20%;
-  padding: 5%;
+  margin-top: 5%;
+  padding: 3%;
   height: 40%;
   border:  solid;
   border-color: gold;
   width: 20%;
-}}
+}
 
-@media screen and (max-width: 375px) {
+h1{
+  color: gold;
+  font-family: "Luminari", fantasy;
+  font-size: 300%;
+}
+}
+@media screen and (max-width: 600px) {
 #login{
   margin-right: 25%;
-  margin-left: 25%;
-  margin-top: 70%;
-  padding: 5%;
+  margin-left: 10%;
+  margin-top: 20%;
+  padding: 20%;
   height: 40%;
   border:  solid;
   border-color: gold;
@@ -37,6 +43,13 @@ width: 100px;
   color:  white;
 }
 
-#button {
-  background-color: gold;
+
+h1{
+  color: gold;
+  font-family: "Luminari", fantasy;
+  font-size: 250%;
+  padding-top: 7%;
+  padding-left: 6%;
+  padding-right: 8%;
 }
+

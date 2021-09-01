@@ -1,20 +1,32 @@
+h1{
+  color: gold;
+  font-family: "Luminari", fantasy;
+  font-size: 200%;
+   padding-left: 10%;
+}
+
+#logo{
+width: 8%;
+padding-right: 3%;
+margin-top: 2%;
+
+}
+#descrizione{
+font-family: "Times new roman", serif;
+}
+
 #nomeitem{
 color: gold;
 }
 
-#bottone{
- background-color: gold;
-  padding: 1%;
- font-family: "Luminari", fantasy;
- color: #191970;
-}
 
 #newprod{
   color: gold;
   font-family: "Luminari", fantasy;
   font-size: 150%;
-  padding-left: 8%;
+  padding-left: 21%;
   padding-right: 12%;
+  padding-top: -10%;
 
 }
 
@@ -23,7 +35,6 @@ color: gold;
   font-weight: bolder;
   font-size: 125%;
    color:  #DAA520;
-     margin: .5em 0 .75em;
 }
 
 

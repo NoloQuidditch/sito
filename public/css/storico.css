@@ -1,0 +1,14 @@
+h1{
+  color: gold;
+  font-family: "Luminari", fantasy;
+  font-size: 200%;
+}
+
+td{
+  color: white;
+  padding-top: 3%;
+}
+
+#fattura{
+  padding-left: 2%;
+}
